@@ -116,3 +116,6 @@ CONFIG_EXAMPLE_ETH_PHY_ADDR=1
 # http server
 #
 CONFIG_HTTPD_MAX_REQ_HDR_LEN=1024
+
+# RCP 이미지 위치 (별도 저장소 ot_rcp_ESP32-H2 의 build/). 빌드 전 export OT_RCP_BUILD_DIR=<path>
+CONFIG_RCP_SRC_DIR="$ENV{OT_RCP_BUILD_DIR}"

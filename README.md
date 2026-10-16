@@ -31,6 +31,7 @@ H2를 직접 굽는 작업은 불필요하며, **USB2(S3 포트)** 만 연결하
 
 ```bash
 export ESP_THREAD_BR_PATH=~/esp/esp-thread-br
+export OT_RCP_BUILD_DIR=~/esp/projects/ot_rcp_ESP32-H2/build   # RCP 산출물 위치 (sdkconfig CONFIG_RCP_SRC_DIR)
 . ~/esp/esp-idf-v5.5.4/export.sh
 
 # 1) RCP 먼저 (ot_rcp_ESP32-H2 저장소)
@@ -49,6 +50,7 @@ idf.py -p /dev/ttyACM0 flash monitor      # USB2 = S3 포트
 | Wi-Fi SSID/PW | Example Connection Configuration | 미설정 → 콘솔 `wifi -s SSID -p PW` 명령으로 지정 가능 |
 | 자동 시작 | ESP Thread Border Router Example → automatic start mode | OFF (수동: 콘솔/웹 UI에서 `dataset init new` → `thread start`) |
 | RCP 자동 업데이트 | AUTO_UPDATE_RCP | ON |
+| RCP 이미지 경로 | RCP_SRC_DIR | `$ENV{OT_RCP_BUILD_DIR}` — 기본값(`$IDF_PATH/examples/openthread/ot_rcp/build`) 대신 별도 저장소 사용 |
 | LWIP_IPV6_NUM_ADDRESSES | IDF v5.3.1+ | **12** |
 
 ## 동작 확인
